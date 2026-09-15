@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#155e75">
+  <title>Year 2 English Mock Test</title>
+  <style>
+    :root{--ink:#172033;--muted:#5c667a;--paper:#fff;--bg:#eef7f8;--teal:#0f6f78;--teal2:#dff5f3;--blue:#2457a7;--line:#ccd9df;--good:#177245;--bad:#b33b2e;--gold:#f3b61f;--shadow:0 8px 28px rgba(27,63,74,.12)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:linear-gradient(135deg,#eef8f9,#f7f4e9);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+    button,input,select{font:inherit} button{min-height:46px;cursor:pointer;touch-action:manipulation} button:focus-visible,input:focus-visible,select:focus-visible{outline:4px solid #f6c945;outline-offset:2px}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+    .toprow{max-width:1100px;margin:auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:900;color:var(--teal);margin-right:auto}.student-tag{font-size:.88rem;color:var(--muted)}
+    .timer{font-weight:900;background:#fff4c8;border:2px solid #ecd06b;border-radius:999px;padding:7px 13px;min-width:92px;text-align:center}.timer.urgent{background:#ffe2de;color:#8d1d14;border-color:#e9a097}
+    .progress-track{height:8px;background:#dce7ea}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--teal),#36b6a6);transition:width .25s}
+    main{max-width:1050px;margin:20px auto 100px;padding:0 16px}.part-nav{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:16px 0}.nav-btn{border:1px solid #b9cbd0;border-radius:12px;background:#fff;color:var(--ink);font-weight:800}.nav-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+    .panel{display:none}.panel.active{display:block}.paper{background:var(--paper);border:1px solid #d8e1e4;border-radius:22px;box-shadow:var(--shadow);padding:clamp(18px,4vw,38px)}
+    h1{font-size:clamp(1.7rem,5vw,2.7rem);line-height:1.1;margin:.2em 0}h2{font-size:clamp(1.35rem,4vw,2rem);color:var(--teal);margin:0 0 6px}h3{font-size:1.1rem;margin:22px 0 10px}.directions{color:var(--muted);margin:0 0 24px}.marks{font-size:.85rem;background:var(--teal2);padding:5px 10px;border-radius:999px;color:#09535a;white-space:nowrap}
+    .part-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:2px solid #d7e9eb;padding-bottom:14px;margin-bottom:20px}.question{border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0;background:#fff}.qtext{font-weight:800;margin:0 0 12px}.options{display:grid;gap:9px}.option{display:flex;align-items:center;gap:12px;border:2px solid #d6e0e4;border-radius:13px;padding:11px 13px;min-height:50px;background:#fff;cursor:pointer}.option:hover{border-color:#66aeb4;background:#f6ffff}.option:has(input:checked){border-color:var(--teal);background:var(--teal2)}.option input{width:22px;height:22px;accent-color:var(--teal);flex:0 0 auto}
+    .visual-q{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.mini-scene{width:200px;min-height:120px;border-radius:14px;background:#f8efd1;display:grid;place-items:center;border:2px solid #e7dba9}.between-scene{width:100%;display:grid;grid-template-columns:1fr .9fr 1fr;align-items:center;justify-items:center;gap:2px;padding:10px}.between-box{font-size:3.15rem;line-height:1}.between-ball{font-size:2.75rem;line-height:1}.visual-q .qbody{flex:1;min-width:230px}
+    .passage{border:3px solid #263744;border-radius:24px;padding:24px 28px;max-width:860px;margin:0 auto 22px;background:#fffdf5;overflow:visible}.passage-title{text-align:center;font-weight:900;margin-bottom:14px}.passage p{line-height:2.2;margin-bottom:0}.pic-word{position:relative;display:inline-grid;place-items:center;min-width:80px;height:70px;padding:2px 8px;margin:13px 10px 7px;border-bottom:4px solid var(--teal);background:#e8f7f5;border-radius:12px;font-size:3.15rem;line-height:1;vertical-align:middle;overflow:visible}.pic-word sup{position:absolute;top:-12px;left:-12px;z-index:2;font-size:.78rem;line-height:1;background:#172033;color:#fff;border:3px solid #fff;border-radius:50%;width:27px;height:27px;display:grid;place-items:center;margin:0;box-shadow:0 2px 4px rgba(0,0,0,.18)}.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .storyboard{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 24px}.story-panel{border:2px solid #293c48;border-radius:14px;padding:12px;background:#fffdf5;display:grid;grid-template-columns:90px 1fr;align-items:center;gap:10px}.story-emoji{font-size:3.8rem;text-align:center}.story-panel p{margin:0;font-weight:700}.notice{max-width:640px;margin:0 auto 24px;border:5px double #183b53;border-radius:16px;padding:18px;background:#fffdf2}.notice h3{text-align:center;font-size:1.6rem;margin:0 0 12px;color:#174f70}.notice-table{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;border:2px solid #96a9b4;border-radius:10px;padding:12px}.notice-label{font-weight:900}.notice-icons{text-align:center;font-size:2rem;letter-spacing:.3rem;margin:12px}.rules{background:#eaf6f7;border-radius:10px;padding:10px 14px}
+    .vocab-list{display:grid;gap:13px}.vocab-item{display:grid;grid-template-columns:74px 1fr minmax(150px,230px);gap:14px;align-items:center;border:1px solid var(--line);border-radius:15px;padding:13px}.vocab-pic{font-size:3.1rem;text-align:center}.clue{color:#344055}.spell-wrap{display:flex;align-items:center;border:2px solid #9bb5bd;border-radius:12px;background:#fff;overflow:hidden}.first-letter{font-weight:900;background:#e5f5f4;padding:11px 12px}.spell{border:0;min-width:0;width:100%;padding:11px 9px;text-transform:lowercase}.spell::placeholder{color:#9ca7af;letter-spacing:3px}
+    .mechanics-key{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}.mechanics-key span{background:#e8f7f5;border:2px solid #8dc7c5;border-radius:999px;padding:8px 14px;font-weight:850}.builder{border:1px solid var(--line);border-radius:17px;padding:16px;margin:16px 0}.builder-head{display:flex;align-items:center;gap:14px}.builder-pic{font-size:3.4rem;width:70px;text-align:center}.builder-prompt{font-weight:800}.answer-zone,.card-bank{min-height:64px;border:2px dashed #8baab1;border-radius:13px;padding:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}.answer-zone{background:#f7fcfc}.card-bank{background:#fff9e8}.word-card{border:2px solid #aec1c6;background:#fff;border-radius:11px;padding:8px 12px;min-height:44px;font-weight:750;box-shadow:0 2px 0 #b8c5c8}.word-card:hover{border-color:var(--teal)}.answer-zone .word-card{background:#dff5f3;border-color:#4c9ba2}.small-btn{border:0;border-radius:10px;background:#edf1f3;padding:7px 12px;min-height:42px;font-weight:700}.builder-tools{text-align:right;margin-top:8px}.feedback{margin-top:10px;font-weight:800}.feedback.good{color:var(--good)}.feedback.bad{color:var(--bad)}
+    .page-actions{display:flex;justify-content:space-between;gap:12px;margin-top:22px}.primary,.secondary,.danger{border:0;border-radius:13px;padding:12px 20px;font-weight:900}.primary{background:var(--teal);color:#fff}.secondary{background:#e5ecef;color:#23343b}.danger{background:#b53b2f;color:#fff}.primary:disabled{opacity:.45;cursor:not-allowed}.submit-wrap{text-align:center;margin:26px 0}.submit-main{font-size:1.12rem;padding:14px 28px;background:#153f74;color:#fff;border:0;border-radius:15px;font-weight:900}
+    .overlay{position:fixed;inset:0;z-index:100;background:rgba(16,35,45,.72);display:grid;place-items:center;padding:18px}.overlay.hidden{display:none}.dialog{width:min(660px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:24px;padding:clamp(22px,5vw,38px);box-shadow:0 25px 70px rgba(0,0,0,.3)}.dialog .field{display:grid;gap:6px;margin:14px 0}.field label{font-weight:800}.field input,.field select{min-height:50px;border:2px solid #b9cbd0;border-radius:12px;padding:9px 12px;background:#fff}.set-note{font-size:.88rem;color:var(--muted);margin:2px 0 0}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:20px}.intro-points{padding-left:22px}.intro-points li{margin:6px 0}
+    .report-score{text-align:center;font-size:3.2rem;font-weight:950;color:var(--teal);line-height:1}.report-sub{text-align:center;color:var(--muted);margin:8px}.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}.report-part{border:1px solid var(--line);border-radius:13px;padding:12px;text-align:center}.report-part strong{display:block;font-size:1.4rem;color:#154a6a}.review-list{padding-left:20px}.review-list li{margin:8px 0}.hidden{display:none!important}
+    .result-correct{border-color:#76b993!important;background:#f0fff6!important}.result-wrong{border-color:#e2a097!important;background:#fff5f3!important}.correct-note{display:block;color:var(--good);font-weight:800;margin-top:8px}
+    @media(max-width:760px){body{font-size:16px}.part-nav{grid-template-columns:repeat(3,1fr)}.qgrid,.storyboard{grid-template-columns:1fr}.vocab-item{grid-template-columns:62px 1fr}.spell-wrap{grid-column:1/-1}.report-grid{grid-template-columns:1fr 1fr}.toprow{gap:8px}.student-tag{order:3;width:100%}.paper{border-radius:16px}.passage{padding:20px 18px}.passage p{line-height:2.15}.pic-word{min-width:70px;height:62px;margin:13px 8px 7px;font-size:2.75rem}.pic-word sup{top:-11px;left:-9px}.page-actions{position:sticky;bottom:8px;background:rgba(255,255,255,.94);padding:8px;border-radius:14px;box-shadow:var(--shadow)}}
+    @media print{body{background:#fff}.topbar,.part-nav,.page-actions,.submit-wrap,.builder-tools,.card-bank,.dialog-actions{display:none!important}main{margin:0;max-width:none}.panel{display:block!important;break-before:page}.panel:first-of-type{break-before:auto}.paper{box-shadow:none;border:0;padding:0}.question,.builder{break-inside:avoid}.answer-zone{border-style:solid}.report-grid{grid-template-columns:repeat(3,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="toprow"><div id="setBrand" class="brand">YEAR 2 ENGLISH MOCK TEST · SET 1</div><div id="studentTag" class="student-tag">Not started</div><button id="setsBtn" class="small-btn" type="button">Choose Set</button><div id="timer" class="timer">60:00</div></div>
+    <div class="progress-track" aria-label="Test progress"><div id="progressFill" class="progress-fill"></div></div>
+  </div>
+  <main>
+    <nav id="partNav" class="part-nav" aria-label="Test parts"></nav>
+    <div id="panels"></div>
+    <div class="submit-wrap"><button id="submitBtn" class="submit-main" type="button">Submit Test</button></div>
+  </main>
+
+  <div id="startOverlay" class="overlay">
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="startTitle">
+      <div class="marks">50 marks · 60 minutes</div>
+      <h1 id="startTitle">Year 2 English Mock Test</h1>
+      <p>Choose one of the three revision sets. Each set has six parts and a separate learning report.</p>
+      <ul class="intro-points"><li>Tap one answer for Parts 1 to 4.</li><li>Complete the words in Part 5.</li><li>Tap the word and phrase cards to build sentences in Part 6.</li></ul>
+      <div class="field"><label for="setChoice">Revision set</label><select id="setChoice"><option value="0">Set 1 · School and Daily Life</option><option value="1">Set 2 · Animals and School Activities</option><option value="2">Set 3 · Food and Community</option></select><p id="setNote" class="set-note">No saved attempt for this set.</p></div>
+      <div class="field"><label for="studentName">Name</label><input id="studentName" autocomplete="name" placeholder="Enter your name"></div>
+      <div class="field"><label for="studentClass">Class</label><input id="studentClass" placeholder="Enter your class"></div>
+      <p id="startError" class="feedback bad hidden">Please enter your name and class.</p>
+      <div class="dialog-actions"><button id="clearSavedBtn" class="secondary hidden" type="button">Clear saved attempt</button><button id="startBtn" class="primary" type="button">Start Test</button></div>
+    </section>
+  </div>
+
+  <div id="confirmOverlay" class="overlay hidden">
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"><h2 id="confirmTitle">Submit your test?</h2><p id="confirmText"></p><div class="dialog-actions"><button id="keepWorkingBtn" class="secondary" type="button">Keep Working</button><button id="confirmSubmitBtn" class="danger" type="button">Submit Now</button></div></section>
+  </div>
+
+  <div id="reportOverlay" class="overlay hidden">
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="reportTitle"><h2 id="reportTitle">Learning Report</h2><div id="reportBody"></div><div class="dialog-actions"><button id="printBtn" class="secondary" type="button">Print Report</button><button id="newAttemptBtn" class="primary" type="button">New Attempt</button><button id="anotherSetBtn" class="secondary" type="button">Choose Another Set</button><button id="closeReportBtn" class="secondary" type="button">Review Answers</button></div></section>
+  </div>
+
+  <script>
+  'use strict';
+  const PART_TOTALS=[6,7,7,7,8,15];
+  const partInfo=[
+    ['Language','Choose the best answer to complete each sentence.'],
+    ['Picture Cloze','Read the text. Look at each picture and choose the correct word.'],
+    ['Story','Read the picture story and answer the questions.'],
+    ['Notice','Read the notice and answer the questions.'],
+    ['Vocabulary','Read each clue and complete the word. The first letter is given.'],
+    ['Capital Letters and Full Stops','Read the uncorrected sentence. Tap the cards to rebuild it correctly. Each item gives 2 marks for capitalization and 1 mark for the final full stop.']
+  ];
+  const set1={
+    name:'Set 1 · School and Daily Life',
+    p2Title:'Mia and the Red Kite',
+    p2Icons:['🕔','🎒','🐈','👃','🪁','🏠','☀️'],
+    p2Passage:'Mia gets up at <span class="pic-word" aria-label="five">🕔<sup>1</sup></span> o\'clock. She takes her school <span class="pic-word" aria-label="bag">🎒<sup>2</sup></span> to the park. Near a big tree, she sees a <span class="pic-word" aria-label="cat">🐈<sup>3</sup></span>. It has a pink <span class="pic-word" aria-label="nose">👃<sup>4</sup></span>. Mia flies her red <span class="pic-word" aria-label="kite">🪁<sup>5</sup></span>. Then she walks <span class="pic-word" aria-label="home">🏠<sup>6</sup></span> under the warm <span class="pic-word" aria-label="sun">☀️<sup>7</sup></span>.',
+    story:[['📖🛋️','First, Aina is in the living room. She reads a book.'],['🥪🍽️','Next, she goes to the kitchen. She makes a sandwich.'],['🧢🛏️','Then, Aina goes to the bedroom. She puts on her red cap.'],['🚲🌳','Finally, Aina and her brother go to the park. She rides her bicycle.']],
+    notice:'<div class="notice"><h3>🥗 HEALTHY FOOD DAY 🍎</h3><div class="notice-table"><div class="notice-label">Day</div><div>Friday</div><div class="notice-label">Time</div><div>9:00–11:00 a.m.</div><div class="notice-label">Place</div><div>School Canteen</div></div><div class="notice-icons">🍽️ 🥄 💧</div><p><strong>Bring:</strong> a plate, a spoon and a water bottle.</p><p><strong>You can:</strong> make a fruit salad, draw healthy food and talk about your favourite food.</p><div class="rules"><strong>Rules:</strong> Wash your hands. Keep the canteen clean. Share with your friends.</div></div>',
+    p1:[
+      {q:'Aisyah _______ a purple school bag.',o:['have','has','having'],a:1},
+      {q:'There _______ two chairs near the desk.',o:['is','are','am'],a:1},
+      {q:'We have Physical Education _______ Tuesday.',o:['on','in','at'],a:0},
+      {q:'Ben is thirsty, _______ he drinks some water.',o:['but','so','because'],a:1},
+      {q:'This is _______ orange.',o:['a','an','the'],a:1},
+      {q:'The ball is _______ the two boxes.',o:['between','under','from'],a:0,visual:'<span class="between-scene"><span class="between-box">📦</span><span class="between-ball">⚽</span><span class="between-box">📦</span></span>'}
+    ],
+    p2:[
+      {o:['five','fave','fiv'],a:0},{o:['bug','bag','beg'],a:1},{o:['cot','cut','cat'],a:2},
+      {o:['nase','nus','nose'],a:2},{o:['kite','kate','kote'],a:0},{o:['hame','home','hime'],a:1},{o:['son','san','sun'],a:2}
+    ],
+    p3:[
+      {q:'Where is Aina at the start?',o:['In the kitchen.','In the garden.','In the living room.'],a:2},
+      {q:'What does Aina do in the living room?',o:['She reads a book.','She rides a bicycle.','She makes noodles.'],a:0},
+      {q:'What food does Aina make?',o:['A sandwich.','A cake.','An ice cream.'],a:0},
+      {q:'Where does Aina go after the kitchen?',o:['To the park.','To the bedroom.','To the classroom.'],a:1},
+      {q:'What does Aina put on?',o:['Her shoes.','Her jacket.','Her red cap.'],a:2},
+      {q:'What does Aina ride at the park?',o:['A bicycle.','A bus.','A horse.'],a:0},
+      {q:'Who goes to the park with Aina?',o:['Her teacher.','Her brother.','Her mother.'],a:1}
+    ],
+    p4:[
+      {q:'When is Healthy Food Day?',o:['On Monday.','On Friday.','On Sunday.'],a:1},
+      {q:'What time does the event start?',o:['At 8:00 a.m.','At 9:00 a.m.','At 11:00 a.m.'],a:1},
+      {q:'Where will the event be held?',o:['In the school canteen.','In the school hall.','In the library.'],a:0},
+      {q:'Which item should you NOT bring?',o:['A water bottle.','A spoon.','A football.'],a:2},
+      {q:'What can you make at the event?',o:['A paper plane.','A fruit salad.','A toy car.'],a:1},
+      {q:'What should you do before touching food?',o:['Run quickly.','Wash your hands.','Open your book.'],a:1},
+      {q:'How should you treat your friends?',o:['Share with them.','Shout at them.','Hide their food.'],a:0}
+    ],
+    p5:[
+      {pic:'📏',clue:'You use this to draw a straight line.',first:'r',rest:'uler'},
+      {pic:'🧽',clue:'You use this to remove pencil marks.',first:'e',rest:'raser'},
+      {pic:'✏️',clue:'You use this to write or draw.',first:'p',rest:'encil'},
+      {pic:'📘',clue:'You read words and stories in this.',first:'b',rest:'ook'},
+      {pic:'🎒',clue:'You carry your school things in this.',first:'b',rest:'ag'},
+      {pic:'🪑',clue:'You sit on this.',first:'c',rest:'hair'},
+      {pic:'🧑‍🏫',clue:'You put your books on this in class.',first:'d',rest:'esk'},
+      {pic:'🖍️',clue:'You use these colourful sticks to draw.',first:'c',rest:'rayons'}
+    ],
+    p6:[
+      {pic:'📅⭐',prompt:'Fix: my favourite day is friday',target:['My','favourite day','is','Friday','.'],caps:['My','Friday'],bank:['friday','My','?','Friday','my','is','.','favourite day']},
+      {pic:'🪁👩',prompt:'Fix: i usually fly a kite with my mother',target:['I','usually','fly a kite','with my mother','.'],caps:['I','with my mother'],bank:['i','With my mother','usually','.','I','fly a kite','?','with my mother']},
+      {pic:'🚌🏫',prompt:'Fix: we always go to school by bus',target:['We','always','go to school','by bus','.'],caps:['We','go to school'],bank:['we','Go to school','always','We','.','go to school','?','by bus']},
+      {pic:'🍜🥢',prompt:'Fix: i sometimes have noodles for lunch',target:['I','sometimes have','noodles','for lunch','.'],caps:['I','sometimes have'],bank:['Sometimes have','for lunch','sometimes have','I','noodles','.','i','?']},
+      {pic:'👨‍👩‍👧‍👦🏖️',prompt:'Fix: my family and i often go to the beach during the holiday',target:['My family and I','often go','to the beach','during the holiday','.'],caps:['My family and I','often go'],bank:['during the holiday','My family and i','Often go','often go','.','my family and I','My family and I','to the beach','?']}
+    ]
+  };
+  const set2={
+    name:'Set 2 · Animals and School Activities',
+    p2Title:'Leo at the Farm',
+    p2Icons:['🕕','🎩','🐔','🦆','👃','🏠','🌙'],
+    p2Passage:'Leo gets up at <span class="pic-word" aria-label="six">🕕<sup>1</sup></span> o\'clock. He puts on his red <span class="pic-word" aria-label="hat">🎩<sup>2</sup></span>. At the farm, he sees a <span class="pic-word" aria-label="hen">🐔<sup>3</sup></span> and a yellow <span class="pic-word" aria-label="duck">🦆<sup>4</sup></span>. A little pig has a pink <span class="pic-word" aria-label="nose">👃<sup>5</sup></span>. Leo goes <span class="pic-word" aria-label="home">🏠<sup>6</sup></span> when he sees the <span class="pic-word" aria-label="moon">🌙<sup>7</sup></span>.',
+    story:[['✏️🏫','First, Ravi is in the classroom. He writes his name.'],['📚🤫','Next, he goes to the library. He reads a storybook.'],['🍚🥛','Then, Ravi eats rice and drinks milk in the canteen.'],['⚽👦','Finally, Ravi and Danial play football on the school field.']],
+    notice:'<div class="notice"><h3>🏃 SCHOOL SPORTS DAY 🏅</h3><div class="notice-table"><div class="notice-label">Day</div><div>Saturday</div><div class="notice-label">Time</div><div>7:30–10:30 a.m.</div><div class="notice-label">Place</div><div>School Field</div></div><div class="notice-icons">🧢 🧻 💧</div><p><strong>Bring:</strong> a cap, a small towel and a water bottle.</p><p><strong>You can:</strong> run, jump and throw a ball.</p><div class="rules"><strong>Rules:</strong> Wear your sports shoes. Stay with your team. Keep the field clean.</div></div>',
+    p1:[
+      {q:'Amir _______ a new yellow ruler.',o:['have','has','having'],a:1},
+      {q:'There _______ four ducks in the pond.',o:['is','are','am'],a:1},
+      {q:'We have Music _______ Thursday.',o:['on','in','at'],a:0},
+      {q:'It is raining, _______ Siti takes an umbrella.',o:['but','so','because'],a:1},
+      {q:'That is _______ elephant.',o:['a','an','the'],a:1},
+      {q:'The rabbit is _______ the table.',o:['under','between','from'],a:0,visual:'<span style="font-size:3rem">🪑</span><span style="font-size:2.8rem;align-self:end">🐇</span>'}
+    ],
+    p2:[
+      {o:['six','sax','sux'],a:0},{o:['hot','hat','hit'],a:1},{o:['han','hen','hin'],a:1},
+      {o:['deck','duck','dack'],a:1},{o:['nase','nose','nuse'],a:1},{o:['hame','home','hime'],a:1},{o:['maan','meen','moon'],a:2}
+    ],
+    p3:[
+      {q:'Where is Ravi at the start?',o:['In the library.','In the classroom.','In the canteen.'],a:1},
+      {q:'What does Ravi write?',o:['His name.','A storybook.','A song.'],a:0},
+      {q:'What does Ravi do in the library?',o:['He eats rice.','He reads a storybook.','He plays football.'],a:1},
+      {q:'Where does Ravi eat?',o:['In the canteen.','On the field.','In the classroom.'],a:0},
+      {q:'What does Ravi drink?',o:['Water.','Juice.','Milk.'],a:2},
+      {q:'What game does Ravi play?',o:['Badminton.','Football.','Basketball.'],a:1},
+      {q:'Who plays with Ravi?',o:['Danial.','His teacher.','His sister.'],a:0}
+    ],
+    p4:[
+      {q:'When is School Sports Day?',o:['On Friday.','On Saturday.','On Sunday.'],a:1},
+      {q:'What time does it start?',o:['At 7:30 a.m.','At 9:30 a.m.','At 10:30 a.m.'],a:0},
+      {q:'Where will it be held?',o:['In the school hall.','At the library.','On the school field.'],a:2},
+      {q:'Which item should you NOT bring?',o:['A water bottle.','A storybook.','A small towel.'],a:1},
+      {q:'What can pupils do?',o:['Throw a ball.','Cook noodles.','Read quietly.'],a:0},
+      {q:'What should pupils wear?',o:['School uniforms.','Sports shoes.','Raincoats.'],a:1},
+      {q:'What should pupils keep clean?',o:['The field.','The library.','The bus.'],a:0}
+    ],
+    p5:[
+      {pic:'🐈',clue:'This small animal says meow.',first:'c',rest:'at'},
+      {pic:'🐕',clue:'This animal can bark.',first:'d',rest:'og'},
+      {pic:'🐦',clue:'This animal has wings and can fly.',first:'b',rest:'ird'},
+      {pic:'🐟',clue:'This animal swims in water.',first:'f',rest:'ish'},
+      {pic:'🐇',clue:'This animal has long ears and can hop.',first:'r',rest:'abbit'},
+      {pic:'🐒',clue:'This animal can climb trees.',first:'m',rest:'onkey'},
+      {pic:'🐅',clue:'This big wild cat has stripes.',first:'t',rest:'iger'},
+      {pic:'🐘',clue:'This large animal has a long trunk.',first:'e',rest:'lephant'}
+    ],
+    p6:[
+      {pic:'📅',prompt:'Fix: today is monday',target:['Today','is','Monday','.'],caps:['Today','Monday'],bank:['today','Today','is','monday','Monday','?','.']},
+      {pic:'👦🚲',prompt:'Fix: ali has a blue bicycle',target:['Ali','has','a blue bicycle','.'],caps:['Ali','a blue bicycle'],bank:['ali','Ali','Has','has','a blue bicycle','?','.']},
+      {pic:'🍚🍗',prompt:'Fix: i like rice and chicken',target:['I','like','rice and chicken','.'],caps:['I','rice and chicken'],bank:['i','I','Like','like','rice and chicken','?','.']},
+      {pic:'⚽🏫',prompt:'Fix: we play football after school',target:['We','play football','after school','.'],caps:['We','after school'],bank:['we','We','play football','After school','after school','?','.']},
+      {pic:'👩‍🏫',prompt:'Fix: my teacher is miss lee',target:['My teacher','is','Miss Lee','.'],caps:['My teacher','Miss Lee'],bank:['my teacher','My teacher','is','miss lee','Miss Lee','?','.']}
+    ]
+  };
+  const set3={
+    name:'Set 3 · Food and Community',
+    p2Title:'Nina’s Picnic',
+    p2Icons:['🕗','🚌','🥤','🎂','🪁','🏠','🌧️'],
+    p2Passage:'Nina leaves at <span class="pic-word" aria-label="eight">🕗<sup>1</sup></span> o\'clock. She takes a blue <span class="pic-word" aria-label="bus">🚌<sup>2</sup></span> to the park. She drinks from a red <span class="pic-word" aria-label="cup">🥤<sup>3</sup></span> and shares a <span class="pic-word" aria-label="cake">🎂<sup>4</sup></span>. Nina flies a <span class="pic-word" aria-label="kite">🪁<sup>5</sup></span>. She goes <span class="pic-word" aria-label="home">🏠<sup>6</sup></span> when the <span class="pic-word" aria-label="rain">🌧️<sup>7</sup></span> starts.',
+    story:[['🥭🛒','First, Kumar and his mother go to the market. They buy six mangoes.'],['🧥🏬','Next, Kumar tries on a green jacket at the clothes shop.'],['🤖🧸','Then, he sees a robot and a teddy bear at the toy shop.'],['🚌🏠','Finally, Kumar and his mother go home by bus.']],
+    notice:'<div class="notice"><h3>🎂 MAYA’S BIRTHDAY PARTY 🎈</h3><div class="notice-table"><div class="notice-label">Day</div><div>Sunday</div><div class="notice-label">Time</div><div>3:00–5:00 p.m.</div><div class="notice-label">Place</div><div>Community Hall</div></div><div class="notice-icons">💌 🎁 💧</div><p><strong>Bring:</strong> a birthday card, a small gift and a water bottle.</p><p><strong>You can:</strong> play games, sing songs and eat cake.</p><div class="rules"><strong>Rules:</strong> Walk inside the hall. Share the toys. Put rubbish in the bin.</div></div>',
+    p1:[
+      {q:'Mei Ling _______ two sisters.',o:['have','has','having'],a:1},
+      {q:'There _______ some noodles in the bowl.',o:['is','are','am'],a:0},
+      {q:'The party starts _______ three o’clock.',o:['on','in','at'],a:2},
+      {q:'Kumar is cold, _______ he wears a jacket.',o:['but','so','because'],a:1},
+      {q:'I can see _______ old bus.',o:['a','an','the'],a:1},
+      {q:'The apple is _______ the bag.',o:['in','between','from'],a:0,visual:'<span style="font-size:4rem">🛍️</span><span style="font-size:2.3rem;position:absolute">🍎</span>'}
+    ],
+    p2:[
+      {o:['eight','eaght','eught'],a:0},{o:['bas','bus','bis'],a:1},{o:['cap','cop','cup'],a:2},
+      {o:['cake','coke','cuke'],a:0},{o:['kite','kate','kote'],a:0},{o:['hime','hame','home'],a:2},{o:['rain','rein','ruin'],a:0}
+    ],
+    p3:[
+      {q:'Who goes shopping with Kumar?',o:['His mother.','His father.','His friend.'],a:0},
+      {q:'What fruit do they buy?',o:['Apples.','Mangoes.','Bananas.'],a:1},
+      {q:'How many mangoes do they buy?',o:['Four.','Five.','Six.'],a:2},
+      {q:'What colour is the jacket?',o:['Green.','Red.','Blue.'],a:0},
+      {q:'Where does Kumar see a robot?',o:['At the market.','At the toy shop.','At home.'],a:1},
+      {q:'Which toy is beside the robot?',o:['A ball.','A kite.','A teddy bear.'],a:2},
+      {q:'How do they go home?',o:['By bus.','By car.','On foot.'],a:0}
+    ],
+    p4:[
+      {q:'When is Maya’s birthday party?',o:['On Saturday.','On Sunday.','On Monday.'],a:1},
+      {q:'What time does it start?',o:['At 2:00 p.m.','At 3:00 p.m.','At 5:00 p.m.'],a:1},
+      {q:'Where is the party?',o:['At the community hall.','At the school field.','At the library.'],a:0},
+      {q:'Which item should you NOT bring?',o:['A birthday card.','A football.','A small gift.'],a:1},
+      {q:'What can children eat?',o:['Cake.','Noodles.','Ice cream only.'],a:0},
+      {q:'Where should rubbish go?',o:['On the floor.','Under the table.','In the bin.'],a:2},
+      {q:'What should children share?',o:['The toys.','The gifts.','The chairs.'],a:0}
+    ],
+    p5:[
+      {pic:'🍚',clue:'This is a common white food eaten with dishes.',first:'r',rest:'ice'},
+      {pic:'🍞',clue:'You can toast this food for breakfast.',first:'b',rest:'read'},
+      {pic:'🍜',clue:'This long food is cooked in soup or fried.',first:'n',rest:'oodles'},
+      {pic:'🥛',clue:'This white drink comes from cows.',first:'m',rest:'ilk'},
+      {pic:'🍎',clue:'This round fruit can be red or green.',first:'a',rest:'pple'},
+      {pic:'🍌',clue:'This long yellow fruit is easy to peel.',first:'b',rest:'anana'},
+      {pic:'🍗',clue:'This meat comes from a bird.',first:'c',rest:'hicken'},
+      {pic:'💧',clue:'You drink this when you are thirsty.',first:'w',rest:'ater'}
+    ],
+    p6:[
+      {pic:'🎂📅',prompt:'Fix: my birthday is on sunday',target:['My birthday','is on','Sunday','.'],caps:['My birthday','Sunday'],bank:['my birthday','My birthday','is on','sunday','Sunday','?','.']},
+      {pic:'👧👗',prompt:'Fix: sara wears a red dress',target:['Sara','wears','a red dress','.'],caps:['Sara','a red dress'],bank:['sara','Sara','Wears','wears','a red dress','?','.']},
+      {pic:'🥛🍞',prompt:'Fix: i drink milk for breakfast',target:['I','drink milk','for breakfast','.'],caps:['I','for breakfast'],bank:['i','I','Drink milk','drink milk','for breakfast','?','.']},
+      {pic:'🦁📅',prompt:'Fix: we visit the zoo in june',target:['We','visit the zoo','in June','.'],caps:['We','in June'],bank:['we','We','visit the zoo','in june','in June','?','.']},
+      {pic:'👨🚌',prompt:'Fix: mr tan drives a blue bus',target:['Mr Tan','drives','a blue bus','.'],caps:['Mr Tan','a blue bus'],bank:['mr tan','Mr tan','Mr Tan','drives','a blue bus','?','.']}
+    ]
+  };
+  const sets=[set1,set2,set3];
+  let data=sets[0];
+  const state={setIndex:0,current:0,seconds:3600,started:false,submitted:false,name:'',className:'',answers:{},builders:{0:[],1:[],2:[],3:[],4:[]}};
+  let timerId=null;
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function blankState(setIndex){return {setIndex,current:0,seconds:3600,started:false,submitted:false,name:'',className:'',answers:{},builders:{0:[],1:[],2:[],3:[],4:[]}}}
+  function storageKey(setIndex){return `y2EnglishMockV2_set${setIndex}`}
+  function savedState(setIndex){try{return JSON.parse(localStorage.getItem(storageKey(setIndex)))}catch(e){return null}}
+  function chooseSet(setIndex,keepIdentity=false){
+    clearInterval(timerId);const typedName=$('#studentName').value.trim(),typedClass=$('#studentClass').value.trim();data=sets[setIndex];Object.assign(state,blankState(setIndex));
+    const saved=savedState(setIndex),canResume=saved&&saved.started&&!saved.submitted;if(canResume)Object.assign(state,saved);
+    buildUI();$('#setChoice').value=String(setIndex);$('#setBrand').textContent=`YEAR 2 ENGLISH MOCK TEST · SET ${setIndex+1}`;$('#submitBtn').disabled=false;$('#startError').classList.add('hidden');
+    if(canResume){$('#studentName').value=state.name;$('#studentClass').value=state.className;$('#studentTag').textContent=`${state.name} · ${state.className} · Set ${setIndex+1}`;$('#clearSavedBtn').classList.remove('hidden');$('#startBtn').textContent='Continue Saved Test';$('#setNote').textContent='A saved attempt is ready to continue.';restoreInputs()}
+    else{$('#studentName').value=keepIdentity?(typedName||(saved&&saved.name)||''):((saved&&saved.name)||'');$('#studentClass').value=keepIdentity?(typedClass||(saved&&saved.className)||''):((saved&&saved.className)||'');$('#clearSavedBtn').classList.toggle('hidden',!saved);$('#startBtn').textContent=saved&&saved.submitted?'Start New Attempt':'Start Test';$('#setNote').textContent=saved&&saved.submitted?'A previous attempt was completed. Start again for a new score.':'No saved attempt for this set.';$('#studentTag').textContent='Not started';updateTimer();updateProgress()}
+  }
+  function radioQuestion(part,i,item){
+    const visual=item.visual?`<div class="mini-scene" aria-label="question picture">${item.visual}</div>`:'';
+    const body=`<div class="qbody"><p class="qtext">${i+1}. ${item.q||''}</p><div class="options">${item.o.map((x,j)=>`<label class="option"><input type="radio" name="p${part}q${i}" value="${j}"><span>${String.fromCharCode(65+j)}. ${esc(x)}</span></label>`).join('')}</div></div>`;
+    return `<section class="question" data-part="${part}" data-q="${i}">${item.visual?`<div class="visual-q">${visual}${body}</div>`:body}</section>`;
+  }
+  function partShell(i,inside){return `<section class="panel${i===0?' active':''}" id="part${i+1}"><div class="paper"><div class="part-head"><div><h2>Part ${i+1} · ${partInfo[i][0]}</h2><p class="directions">${partInfo[i][1]}</p></div><span class="marks">${PART_TOTALS[i]} marks</span></div>${inside}<div class="page-actions"><button class="secondary prev" type="button" ${i===0?'disabled':''}>Previous</button><button class="primary next" type="button" ${i===5?'disabled':''}>Next Part</button></div></div></section>`}
+  function buildUI(){
+    $('#partNav').innerHTML=partInfo.map((p,i)=>`<button class="nav-btn${i===0?' active':''}" data-go="${i}" type="button">Part ${i+1}<br><small>${PART_TOTALS[i]} marks</small></button>`).join('');
+    const p1=data.p1.map((x,i)=>radioQuestion(1,i,x)).join('');
+    const icons=data.p2Icons;
+    const p2Pass=`<div class="passage"><div class="passage-title">${esc(data.p2Title)}</div><p>${data.p2Passage}</p></div>`;
+    const p2Qs=`<div class="qgrid">${data.p2.map((x,i)=>radioQuestion(2,i,{q:`Choose the word for picture ${i+1}: ${icons[i]}`,o:x.o,a:x.a})).join('')}</div>`;
+    const story=`<div class="storyboard">${data.story.map(x=>`<div class="story-panel"><div class="story-emoji">${x[0]}</div><p>${esc(x[1])}</p></div>`).join('')}</div>`;
+    const p3=story+`<div class="qgrid">${data.p3.map((x,i)=>radioQuestion(3,i,x)).join('')}</div>`;
+    const notice=data.notice;
+    const p5=`<div class="vocab-list">${data.p5.map((x,i)=>`<div class="vocab-item question" data-part="5" data-q="${i}"><div class="vocab-pic" aria-hidden="true">${x.pic}</div><div><strong>${i+1}.</strong> <span class="clue">${esc(x.clue)}</span></div><label class="spell-wrap"><span class="first-letter">${x.first}</span><input class="spell" data-spell="${i}" maxlength="${x.rest.length}" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Complete word ${i+1}" placeholder="${'_'.repeat(x.rest.length)}"></label></div>`).join('')}</div>`;
+    const p6=`<div class="mechanics-key"><span>Capitalization: 2 marks</span><span>Full stop: 1 mark</span></div>`+data.p6.map((x,i)=>`<div class="builder question" data-part="6" data-q="${i}"><div class="builder-head"><div class="builder-pic" aria-hidden="true">${x.pic}</div><div><strong>${i+1}.</strong><div class="builder-prompt">${esc(x.prompt)}</div></div></div><div class="answer-zone" data-answer-zone="${i}" aria-label="Sentence answer area"></div><div class="card-bank" data-card-bank="${i}" aria-label="Available word cards"></div><div class="builder-tools"><button class="small-btn reset-builder" data-reset="${i}" type="button">Reset sentence</button></div><div class="feedback" data-builder-feedback="${i}"></div></div>`).join('');
+    $('#panels').innerHTML=[p1,p2Pass+p2Qs,p3,notice+`<div class="qgrid">${data.p4.map((x,i)=>radioQuestion(4,i,x)).join('')}</div>`,p5,p6].map((x,i)=>partShell(i,x)).join('');
+    data.p6.forEach((_,i)=>renderBuilder(i));
+  }
+  function renderBuilder(i){
+    const chosen=state.builders[i]||[], all=data.p6[i].bank.map((t,index)=>({t,index}));
+    const used=new Set(chosen.map(x=>x.index));
+    const zone=document.querySelector(`[data-answer-zone="${i}"]`), bank=document.querySelector(`[data-card-bank="${i}"]`);
+    if(!zone||!bank)return;
+    zone.innerHTML=chosen.length?chosen.map((x,pos)=>`<button class="word-card" data-remove="${i}" data-pos="${pos}" type="button">${esc(x.t)}</button>`).join(''):'<span class="directions">Your sentence will appear here.</span>';
+    bank.innerHTML=all.filter(x=>!used.has(x.index)).map(x=>`<button class="word-card" data-add="${i}" data-index="${x.index}" type="button">${esc(x.t)}</button>`).join('');
+  }
+  function showPart(i){state.current=Math.max(0,Math.min(5,i));$$('.panel').forEach((p,j)=>p.classList.toggle('active',j===state.current));$$('.nav-btn').forEach((b,j)=>b.classList.toggle('active',j===state.current));window.scrollTo({top:0,behavior:'smooth'});save();}
+  function updateTimer(){const m=Math.floor(state.seconds/60),s=state.seconds%60;$('#timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;$('#timer').classList.toggle('urgent',state.seconds<=300);if(state.seconds<=0){clearInterval(timerId);submitTest(true)}}
+  function startTimer(){clearInterval(timerId);timerId=setInterval(()=>{if(!state.submitted){state.seconds=Math.max(0,state.seconds-1);updateTimer();if(state.seconds%5===0)save()}},1000)}
+  function answeredCount(){let n=0;for(let p=1;p<=4;p++)data['p'+p].forEach((_,i)=>{if(state.answers[`p${p}q${i}`]!==undefined)n++});data.p5.forEach((_,i)=>{if((state.answers[`spell${i}`]||'').trim())n++});data.p6.forEach((_,i)=>{if((state.builders[i]||[]).length)n++});return n}
+  function updateProgress(){const total=40;$('#progressFill').style.width=`${answeredCount()/total*100}%`}
+  function collect(){$$('input[type=radio]:checked').forEach(x=>state.answers[x.name]=Number(x.value));$$('.spell').forEach(x=>state.answers[`spell${x.dataset.spell}`]=x.value.toLowerCase().trim());save();updateProgress()}
+  function save(){if(!state.started)return;localStorage.setItem(storageKey(state.setIndex),JSON.stringify(state))}
+  function restoreInputs(){Object.entries(state.answers).forEach(([k,v])=>{if(k.startsWith('p')){const el=document.querySelector(`input[name="${k}"][value="${v}"]`);if(el)el.checked=true}else if(k.startsWith('spell')){const el=document.querySelector(`[data-spell="${k.replace('spell','')}"]`);if(el)el.value=v}});data.p6.forEach((_,i)=>renderBuilder(i));showPart(state.current);updateProgress();updateTimer()}
+  function scoreBuilderItem(x,tokens){const noPunct=tokens.filter(t=>!['.','?','!'].includes(t));const targetNo=x.target.filter(t=>t!=='.');const normalise=a=>a.map(t=>t.toLowerCase()).sort();const complete=JSON.stringify(normalise(noPunct))===JSON.stringify(normalise(targetNo));let s=0;if(complete&&tokens.includes(x.caps[0]))s++;if(complete&&tokens.includes(x.caps[1]))s++;if(tokens[tokens.length-1]==='.'&&tokens.filter(t=>t==='.').length===1)s++;return s}
+  function scoreTest(){
+    const parts=[0,0,0,0,0,0],review=[];
+    for(let p=1;p<=4;p++)data['p'+p].forEach((x,i)=>{if(state.answers[`p${p}q${i}`]===x.a)parts[p-1]++;else review.push(`Part ${p}, Question ${i+1}`)});
+    data.p5.forEach((x,i)=>{if((state.answers[`spell${i}`]||'').toLowerCase()===x.rest)parts[4]++;else review.push(`Part 5, Question ${i+1}: ${x.first}${x.rest}`)});
+    data.p6.forEach((x,i)=>{const tokens=(state.builders[i]||[]).map(y=>y.t);const s=scoreBuilderItem(x,tokens);parts[5]+=s;if(s<3)review.push(`Part 6, Question ${i+1}: check capital letters and the full stop — ${x.target.join(' ')}`)});
+    return {parts,total:parts.reduce((a,b)=>a+b,0),review};
+  }
+  function markReview(){
+    for(let p=1;p<=4;p++)data['p'+p].forEach((x,i)=>{const box=document.querySelector(`[data-part="${p}"][data-q="${i}"]`);const ok=state.answers[`p${p}q${i}`]===x.a;box.classList.add(ok?'result-correct':'result-wrong');if(!ok)box.insertAdjacentHTML('beforeend',`<span class="correct-note">Correct answer: ${String.fromCharCode(65+x.a)}. ${esc(x.o[x.a])}</span>`)});
+    data.p5.forEach((x,i)=>{const box=document.querySelector(`[data-part="5"][data-q="${i}"]`),ok=(state.answers[`spell${i}`]||'')===x.rest;box.classList.add(ok?'result-correct':'result-wrong');if(!ok)box.insertAdjacentHTML('beforeend',`<span class="correct-note">Correct word: ${x.first}${x.rest}</span>`)});
+    data.p6.forEach((x,i)=>{const tokens=(state.builders[i]||[]).map(y=>y.t),ok=scoreBuilderItem(x,tokens)===3,box=document.querySelector(`[data-part="6"][data-q="${i}"]`);box.classList.add(ok?'result-correct':'result-wrong');document.querySelector(`[data-builder-feedback="${i}"]`).innerHTML=ok?'Capital letters and full stop are correct.':`Model sentence: ${esc(x.target.join(' '))}`;document.querySelector(`[data-builder-feedback="${i}"]`).className=`feedback ${ok?'good':'bad'}`});
+    $$('input,button.word-card,.reset-builder').forEach(x=>x.disabled=true)
+  }
+  function submitTest(auto=false){collect();const missing=40-answeredCount();if(!auto&&missing>0){$('#confirmText').textContent=`You still have ${missing} unanswered question${missing===1?'':'s'}. You may submit now or keep working.`;$('#confirmOverlay').classList.remove('hidden');return}finishSubmit()}
+  function finishSubmit(){state.submitted=true;clearInterval(timerId);save();const r=scoreTest(),pct=r.total*2;let msg=pct>=80?'Excellent work!':pct>=60?'Good effort. Review the questions you missed.':'Keep practising. Read the model answers carefully.';$('#reportTitle').textContent=`Learning Report · Set ${state.setIndex+1}`;$('#reportBody').innerHTML=`<p style="text-align:center;font-weight:850">${esc(data.name)}</p><div class="report-score">${r.total} / 50</div><div class="report-sub">${pct}% · ${esc(msg)}</div><p><strong>Name:</strong> ${esc(state.name)} &nbsp; <strong>Class:</strong> ${esc(state.className)}</p><div class="report-grid">${r.parts.map((s,i)=>`<div class="report-part">Part ${i+1}<strong>${s} / ${PART_TOTALS[i]}</strong></div>`).join('')}</div>${r.review.length?`<h3>Review these answers</h3><ul class="review-list">${r.review.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="feedback good">All answers are correct!</p>'}`;$('#confirmOverlay').classList.add('hidden');$('#reportOverlay').classList.remove('hidden');$('#submitBtn').disabled=true;markReview()}
+  function bind(){
+    document.addEventListener('change',e=>{if(e.target.matches('input[type=radio],.spell'))collect()});
+    document.addEventListener('input',e=>{if(e.target.matches('.spell'))collect()});
+    document.addEventListener('click',e=>{
+      const go=e.target.closest('[data-go]');if(go)showPart(Number(go.dataset.go));
+      if(e.target.closest('.next'))showPart(state.current+1);if(e.target.closest('.prev'))showPart(state.current-1);
+      const add=e.target.closest('[data-add]');if(add&&!state.submitted){const i=Number(add.dataset.add),index=Number(add.dataset.index);state.builders[i].push({t:data.p6[i].bank[index],index});renderBuilder(i);save();updateProgress()}
+      const rem=e.target.closest('[data-remove]');if(rem&&!state.submitted){const i=Number(rem.dataset.remove),pos=Number(rem.dataset.pos);state.builders[i].splice(pos,1);renderBuilder(i);save();updateProgress()}
+      const reset=e.target.closest('[data-reset]');if(reset&&!state.submitted){const i=Number(reset.dataset.reset);state.builders[i]=[];renderBuilder(i);save();updateProgress()}
+    });
+    $('#setChoice').onchange=e=>chooseSet(Number(e.target.value),true);
+    $('#setsBtn').onclick=()=>{collect();save();clearInterval(timerId);$('#startOverlay').classList.remove('hidden');chooseSet(state.setIndex,true)};
+    $('#startBtn').onclick=()=>{const n=$('#studentName').value.trim(),c=$('#studentClass').value.trim();if(!n||!c){$('#startError').classList.remove('hidden');return}state.name=n;state.className=c;state.started=true;$('#startOverlay').classList.add('hidden');$('#studentTag').textContent=`${n} · ${c} · Set ${state.setIndex+1}`;save();startTimer()};
+    $('#clearSavedBtn').onclick=()=>{const i=state.setIndex;localStorage.removeItem(storageKey(i));chooseSet(i,true)};
+    $('#submitBtn').onclick=()=>submitTest(false);$('#keepWorkingBtn').onclick=()=>$('#confirmOverlay').classList.add('hidden');$('#confirmSubmitBtn').onclick=finishSubmit;
+    $('#printBtn').onclick=()=>window.print();$('#closeReportBtn').onclick=()=>{$('#reportOverlay').classList.add('hidden');showPart(0)};$('#newAttemptBtn').onclick=()=>{const i=state.setIndex;localStorage.removeItem(storageKey(i));$('#reportOverlay').classList.add('hidden');$('#startOverlay').classList.remove('hidden');chooseSet(i,true)};$('#anotherSetBtn').onclick=()=>{const next=(state.setIndex+1)%sets.length;$('#reportOverlay').classList.add('hidden');$('#startOverlay').classList.remove('hidden');chooseSet(next,true);$('#setChoice').focus()};
+  }
+  buildUI();bind();
+  if(!localStorage.getItem(storageKey(0))&&localStorage.getItem('y2EnglishMockV1')){try{const old=JSON.parse(localStorage.getItem('y2EnglishMockV1'));old.setIndex=0;localStorage.setItem(storageKey(0),JSON.stringify(old))}catch(e){}}
+  chooseSet(0);
+  </script>
+</body>
+</html>
